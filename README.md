@@ -1,5 +1,5 @@
 # Modal
-Modal de compra, com checkout
+Modal de compra em React, com checkout.
 
 # Start
 
