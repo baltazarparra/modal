@@ -16,6 +16,10 @@
   }
 }
 
+main {
+  min-height: 100vh;
+}
+
 @media (min-width: 768px) {
   main {
     display: flex;
@@ -184,7 +188,7 @@
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
