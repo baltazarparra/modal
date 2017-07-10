@@ -1,2 +1,8 @@
-# modal
-Modal de comprar com checkout
+# Modal
+Modal de compra, com checkout
+
+# Start
+
+yarn install
+
+yarn start
