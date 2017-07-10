@@ -1,6 +1,4 @@
 .App {
-  min-height: 100vh;
-
   background-color: #f5f5f5;
 }
 
@@ -9,8 +7,6 @@
     background-color: rgba(0,0,0,.7);
   }
   .App {
-    min-height: inherit;
-    max-height: 480px;
     max-width: 900px;
     min-width: 768px;
     position: fixed;
@@ -71,8 +67,7 @@
   flex-direction: column;
 
   width: 75vw;
-  min-height: 30vh;
-  margin: 20px auto;
+  margin: 40px auto;
 
   color: var(--main-color);
 
@@ -270,8 +265,14 @@ footer {
   background-position: left 4px center;
 }
 
-.card-2 {
-  background-image: url('https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/radz_wldvhd_mc_250x158.png');
+.red {
+  border: solid 1px red !important;
+}
+
+.red:after {
+  content: "Campo inválido";
+  position: absolute;
+  bottom: -20px;
 }
 
 .success-icon {

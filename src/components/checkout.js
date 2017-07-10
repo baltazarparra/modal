@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Checkout = ({handleFlag, handleCard, handleMonth, handleYear, handleName, handleCode}) => (
+const Checkout = ({handleCard, handleMonth, handleYear, handleName, handleCode}) => (
   <form id="checkout" className="checkout">
       <label className="checkout__label">
         Número do Cartão
@@ -11,7 +11,6 @@ const Checkout = ({handleFlag, handleCard, handleMonth, handleYear, handleName, 
           minLength="13"
           maxLength="16"
           required
-          onBlur={handleFlag}
           onChange={handleCard}
         />
       </label>

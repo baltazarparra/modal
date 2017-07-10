@@ -87,23 +87,15 @@ class App extends Component {
     })
   }
 
-  handleFlag (e) {
-    if(e.target.value.length >= 8) {
-      console.log('ok')
-      e.target.classList.add('card-2')
-    } else {
-      console.log('error')
-      e.target.classList.remove('card-2')
-    }
-  }
-
   handleCard (e) {
     const card = new CreditCard()
     if(card.isValid(e.target.value)) {
+      e.target.classList.remove('red')
       this.setState({
         validateCard: true
       })
     } else {
+      e.target.classList.add('red')
       this.setState({
         validateCard: false
       })
@@ -176,7 +168,6 @@ class App extends Component {
           handleClick={(e) => this.handleClick(e)}
           handleSteps={(e) => this.handleSteps(e)}
           handleBack={(e) => this.handleBack(e)}
-          handleFlag={(e) => this.handleFlag(e)}
           handleCard={(e) => this.handleCard(e)}
           handleMonth={(e) => this.handleMonth(e)}
           handleYear={(e) => this.handleYear(e)}

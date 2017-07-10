@@ -18,7 +18,6 @@ const Modal = ({
   nextStep,
   handleSteps,
   handleBack,
-  handleFlag,
   handleCard,
   handleMonth,
   handleYear,
@@ -45,7 +44,6 @@ const Modal = ({
         />}
         {pageActive === 'checkout' &&
           <Checkout
-            handleFlag={handleFlag}
             handleCard={handleCard}
             handleMonth={handleMonth}
             handleYear={handleYear}
