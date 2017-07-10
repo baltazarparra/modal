@@ -1,5 +1,6 @@
 {
-  "name": "front-test",
+  "name": "modal",
+  "homepage": "https://baltazarparra.github.io/modal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

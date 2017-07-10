@@ -188,6 +188,13 @@
   color: white;
 }
 
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .footer__button {
   position: absolute;
   bottom: 0;
