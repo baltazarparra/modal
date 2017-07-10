@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700');
+
+:root {
+  --main-color: #661576;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
