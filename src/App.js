@@ -15,8 +15,7 @@ class App extends Component {
       isCurrent: 'active',
       pageActive: 'home',
       validateCard: false,
-      validateMonth: false,
-      validateYear: false,
+      validateDate: false,
       validateName: false,
       validateCode: false
     }
@@ -102,38 +101,37 @@ class App extends Component {
     }
   }
 
-  handleMonth (e) {
+  handleDate (e) {
     const today = new Date()
-    const month = today.getMonth()
-    if(e.target.value >= month) {
+    const year =  today.getFullYear()
+    const month = today.getMonth() + 1
+    const validMonth = document.querySelector('[name="Mês"]')
+    if(e.target.value > year) {
+      e.target.classList.remove('red')
       this.setState({
-        validateMonth: true
+        validateDate: true
+      })
+    } else if ((parseInt(validMonth.value, 10) >= month) && (parseInt(e.target.value, 10) === year)) {
+      e.target.classList.remove('red')
+      this.setState({
+        validateDate: true
       })
     } else {
+      e.target.classList.add('red')
       this.setState({
-        validateMonth: false
-      })
-    }
-  }
-
-  handleYear (e) {
-    if(e.target.value) {
-      this.setState({
-        validateYear: true
-      })
-    } else {
-      this.setState({
-        validateYear: false
+        validateName: false
       })
     }
   }
 
   handleName (e) {
     if(e.target.value.length > 1) {
+      e.target.classList.remove('red')
       this.setState({
         validateName: true
       })
     } else {
+      e.target.classList.add('red')
       this.setState({
         validateName: false
       })
@@ -142,10 +140,12 @@ class App extends Component {
 
   handleCode (e) {
     if(e.target.value.length >= 3 && e.target.value.length <= 4) {
+      e.target.classList.remove('red')
       this.setState({
         validateCode: true
       })
     } else {
+      e.target.classList.add('red')
       this.setState({
         validateCode: false
       })
@@ -169,8 +169,7 @@ class App extends Component {
           handleSteps={(e) => this.handleSteps(e)}
           handleBack={(e) => this.handleBack(e)}
           handleCard={(e) => this.handleCard(e)}
-          handleMonth={(e) => this.handleMonth(e)}
-          handleYear={(e) => this.handleYear(e)}
+          handleDate={(e) => this.handleDate(e)}
           handleName={(e) => this.handleName(e)}
           handleCode={(e) => this.handleCode(e)}
           handleDone={(e) => this.handleDone(e)}

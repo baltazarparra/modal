@@ -19,14 +19,12 @@ const Modal = ({
   handleSteps,
   handleBack,
   handleCard,
-  handleMonth,
-  handleYear,
+  handleDate,
   handleName,
   handleCode,
   handleDone,
   validateCard,
-  validateMonth,
-  validateYear,
+  validateDate,
   validateName,
   validateCode
 }) => (
@@ -45,10 +43,10 @@ const Modal = ({
         {pageActive === 'checkout' &&
           <Checkout
             handleCard={handleCard}
-            handleMonth={handleMonth}
-            handleYear={handleYear}
+            handleDate={handleDate}
             handleName={handleName}
             handleCode={handleCode}
+            validateCard={validateCard}
           />}
         {pageActive === 'done' && <Done handleDone={handleDone}/>}
       </main>
@@ -59,8 +57,7 @@ const Modal = ({
       handleDone={handleDone}
       pageActive={pageActive}
       validateCard={validateCard}
-      validateMonth={validateMonth}
-      validateYear={validateYear}
+      validateDate={validateDate}
       validateName={validateName}
       validateCode={validateCode}
     />

@@ -8,8 +8,7 @@ const Footer = ({
     pageActive,
     handleDone,
     validateCard,
-    validateMonth,
-    validateYear,
+    validateDate,
     validateName,
     validateCode
   }) => (
@@ -23,7 +22,7 @@ const Footer = ({
       {pageActive === 'checkout' &&
         <button
           className="footer__button"
-          disabled={validateCard && validateMonth && validateYear && validateName && validateCode ? false : isDisabled}
+          disabled={validateCard && validateDate && validateName && validateCode ? false : isDisabled}
           onClick={handleDone}
         >
           {nextStep}

@@ -278,10 +278,22 @@ footer {
   border: solid 1px red !important;
 }
 
-.red:after {
+.red::after {
   content: "Campo inválido";
+  position: fixed;
+  bottom: 100%;
+  z-index: 100;
+}
+
+.error {
+  display: none;
+  color: red;
+  font-size: 12px;
   position: absolute;
-  bottom: -20px;
+}
+
+.red + .error {
+  display: block;
 }
 
 .success-icon {
