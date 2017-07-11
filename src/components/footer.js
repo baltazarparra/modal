@@ -29,7 +29,7 @@ const Footer = ({
         </button>}
 
         {pageActive === 'done' &&
-          <button className="footer__button">
+          <button className="footer__button sexlog">
             {nextStep}
           </button>}
 
