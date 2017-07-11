@@ -9,6 +9,7 @@
   .App {
     max-width: 900px;
     min-width: 768px;
+    width: 100%;
     margin: 0 auto;
     height: 486px;
     position: absolute;
@@ -202,6 +203,43 @@
 }
 
 @media (min-width: 768px) {
+  .price__description {
+    padding-bottom: 12px;
+    border-bottom: dashed 1px #ccc;
+  }
+}
+
+.price__list {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .price__list {
+    display: block;
+    width: 260px;
+    text-align: center;
+    padding: 12px;
+  }
+  .price__list-item {
+    color: #666;
+    font-size: .8rem;
+    line-height: 1.4rem;
+    list-style: none;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .price__list-item--cartao {
+    background-image: url('./img/icon-credit-card.svg');
+  }
+  .price__list-item--debito {
+    background-image: url('./img/icon-debit.svg');
+  }
+  .price__list-item--boleto {
+    background-image: url('./img/icon-boleto.svg');
+  }
+}
+
+@media (min-width: 768px) {
   .plans {
     flex: 1;
   }
@@ -211,6 +249,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  position: relative;
 
   width: 96%;
   margin: 6px auto;
@@ -231,6 +270,26 @@
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 3.6rem;
+}
+
+@media (min-width: 768px) {
+  .plans__button:hover {
+    border: solid 1px var(--main-color);
+    background-color: #f8d6ff;
+    background-image: url('./img/unchecked-hover.png');
+  }
+  .plans__button.active:before,
+  .plans__button:focus::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 16px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 8px 12px 0;
+    border-color: transparent var(--main-color) transparent transparent;
+  }
 }
 
 .plans__button:focus,
@@ -261,6 +320,11 @@
 @media (min-width: 768px) {
   .footer {
     position: absolute;
+    height: 72px;
+    border-top: solid 2px #ddd;
+    background-image: url('./img/icon-secure.png');
+    background-repeat: no-repeat;
+    background-position: left 50px center;
   }
 }
 

@@ -8,8 +8,6 @@ import Done from './components/done'
 import Footer from './components/footer'
 import Header from './components/header'
 import Modal from './components/modal'
-import Plans from './components/plans'
-import Price from './components/price'
 
 describe('<App />', () => {
   it('renders 1 <App /> component', () => {
@@ -49,20 +47,6 @@ describe('<Header />', () => {
 describe('<Modal />', () => {
   it('renders 1 <Modal /> component', () => {
     const component = shallow(<Modal />)
-    expect(component).toHaveLength(1)
-  })
-})
-
-describe('<Plans />', () => {
-  it('renders 1 <Plans /> component', () => {
-    const component = shallow(<Plans />)
-    expect(component).toHaveLength(1)
-  })
-})
-
-describe('<Price />', () => {
-  it('renders 1 <Price /> component', () => {
-    const component = shallow(<Price />)
     expect(component).toHaveLength(1)
   })
 })

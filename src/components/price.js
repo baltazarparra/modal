@@ -14,6 +14,11 @@ const Price = ({ descriptionTotal, price }) => (
     <p className="price__description">
       {descriptionTotal}
     </p>
+    <ul className="price__list">
+      <li className="price__list-item price__list-item--cartao">Até 3x iguais no cartão de crédito</li>
+      <li className="price__list-item price__list-item--debito">Parcela única no débito em conta</li>
+      <li className="price__list-item price__list-item--boleto">Parcela única no boleto bancário</li>
+    </ul>
   </article>
 )
 
