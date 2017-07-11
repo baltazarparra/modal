@@ -133,6 +133,11 @@
   border-radius: 6px;
   background-color: white;
 
+  background-image: url('./img/unchecked.png');
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+  background-size: 26px;
+
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 3.6rem;
@@ -143,6 +148,7 @@
   color: white;
   outline: 0;
   background-color: var(--main-color);
+  background-image: url('./img/checked.png');
 }
 
 .plans__discount {
@@ -219,7 +225,7 @@
 }
 
 .checkout__input--card {
-  padding-left: 62px;
+  padding-left: 50px;
 }
 
 .checkout__input--cvc {
@@ -275,10 +281,10 @@
 }
 
 .card {
-  background-image: url('http://fronterasmagazine.com/wp-content/uploads/2013/11/tarjeta.jpg');
+  background-image: url('./img/icon-credit-card.svg');
   background-repeat: no-repeat;
   background-position: left 4px center;
-  background-size: 50px;
+  background-size: 38px;
 }
 
 .red {
