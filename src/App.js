@@ -108,16 +108,19 @@ class App extends Component {
     const validMonth = document.querySelector('[name="Mês"]')
     if(e.target.value > year) {
       e.target.classList.remove('red')
+      validMonth.classList.remove('red')
       this.setState({
         validateDate: true
       })
     } else if ((parseInt(validMonth.value, 10) >= month) && (parseInt(e.target.value, 10) === year)) {
       e.target.classList.remove('red')
+      validMonth.classList.remove('red')
       this.setState({
         validateDate: true
       })
     } else {
       e.target.classList.add('red')
+      validMonth.classList.add('red')
       this.setState({
         validateName: false
       })

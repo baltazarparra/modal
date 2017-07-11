@@ -7,8 +7,8 @@ const Price = ({ descriptionTotal, price }) => (
       <div className="price__coin">{price.currency}</div>
       <div className="price__value">{price.integer}</div>
       <div className="price__spans">
-        <span>{price.decimal}</span>
-        <span>{price.periodicy}</span>
+        <span className="price__decimal">{price.decimal}</span>
+        <span className="price__periodicy">{price.periodicy}</span>
       </div>
     </div>
     <p className="price__description">

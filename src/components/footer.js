@@ -12,7 +12,7 @@ const Footer = ({
     validateName,
     validateCode
   }) => (
-  <footer>
+  <footer className="footer">
 
     {pageActive === 'home' &&
       <button className="footer__button" disabled={isDisabled} onClick={handleSteps}>

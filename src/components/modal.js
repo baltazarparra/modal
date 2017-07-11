@@ -30,7 +30,7 @@ const Modal = ({
 }) => (
   <section className="modal">
     <Header pageActive={pageActive} handleBack={handleBack} />
-      <main>
+      <main className="main">
         {pageActive === 'home' && <Price
           descriptionTotal={descriptionTotal}
           price={price}

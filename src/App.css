@@ -1,38 +1,19 @@
 .App {
-  background-color: #f5f5f5;
-  padding-top: 40px;
+  background-color: #f0f0f0;
 }
 
-@media (min-width: 768px) {
-  body {
-    background-color: rgba(0,0,0,.7);
-  }
-  .App {
-    max-width: 900px;
-    min-width: 768px;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-  }
-}
-
-main {
-  min-height: 100vh;
-}
-
-@media (min-width: 768px) {
-  main {
-    display: flex;
-  }
+.main {
+  padding-top: 50px;
 }
 
 .header {
   position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
   z-index: 1;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 50px;
 
   text-align: center;
 
@@ -54,7 +35,7 @@ main {
   right: 0;
 
   height: 100%;
-  padding: 3px 16px;
+  padding: 3px 20px;
 
   color: #626262;
   border: 0;
@@ -73,15 +54,14 @@ main {
   position: relative;
 
   display: flex;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
 
-  width: 75vw;
+  width: 100%;
   margin: 40px auto;
 
   color: var(--main-color);
-
-  justify-content: center;
-  align-items: center;
 }
 
 .price__tag {
@@ -89,8 +69,6 @@ main {
 
   display: flex;
   justify-content: center;
-
-  min-width: 46vw;
 
   text-align: center;
 }
@@ -109,18 +87,17 @@ main {
 
 .price__spans {
   display: flex;
-  flex-direction: column;
-
-  justify-content: space-between;
   align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.price__spans span {
+.price__decimal {
   font-size: 2rem;
   font-weight: 700;
 }
 
-.price__spans span + span {
+.price__periodicy {
   color: #d5186a;
 
   font-size: 1rem;
@@ -128,6 +105,7 @@ main {
 }
 
 .price__description {
+  width: 60%;
   padding-top: 20px;
 
   text-align: center;
@@ -138,14 +116,10 @@ main {
   font-weight: 600;
 }
 
-.price__description b {
-  color: var(--main-color);
-
-  font-weight: 700;
-}
-
-.choices__button {
+.plans__button {
   display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 
   width: 96%;
   margin: 6px auto;
@@ -161,19 +135,16 @@ main {
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 3.6rem;
-
-  align-items: baseline;
-  justify-content: space-between;
 }
 
-.choices__button:focus,
-.choices__button.active {
+.plans__button:focus,
+.plans__button.active {
   color: white;
   outline: 0;
   background-color: var(--main-color);
 }
 
-.choices__button span {
+.plans__discount {
   padding-right: 20px;
 
   text-align: right;
@@ -182,20 +153,11 @@ main {
   font-weight: 600;
 }
 
-.choices__button span b {
-  color: #62b3c9;
-
-  font-size: .8rem;
-}
-
-.choices__button:focus b {
-  color: white;
-}
-
-footer {
+.footer {
   position: fixed;
-  left: 0;
   bottom: 0;
+  left: 0;
+
   width: 100%;
 }
 
@@ -225,28 +187,34 @@ footer {
 
 .checkout__label {
   display: block;
-  color: #888;
+
   margin-bottom: 20px;
+
+  color: #888;
 }
 
 .checkout__input {
   display: block;
+
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+
   border: solid 1px #ccc;
   border-radius: 4px;
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
 }
 
 .checkout__select {
   display: inline-block;
+
   width: 80px;
+  margin-top: 6px;
+  margin-right: 12px;
+  padding: 10px;
+
   border: solid 1px #ccc;
   border-radius: 4px;
-  padding: 10px;
   background-color: white;
-  margin-right: 12px;
-  margin-top: 6px;
 }
 
 .checkout__input--card {
@@ -258,20 +226,24 @@ footer {
 }
 
 .checkout__verbose {
+  display: block;
+
   padding: 12px;
-  color: #c19951;
+
   text-align: center;
+
+  color: #c19951;
   border: 1px solid #f0d8a8;
   background-color: #FCF7DE;
-  display: block;
+
   font-size: 14px;
 }
 
 .card {
   background-image: url('http://fronterasmagazine.com/wp-content/uploads/2013/11/tarjeta.jpg');
-  background-size: 50px;
   background-repeat: no-repeat;
   background-position: left 4px center;
+  background-size: 50px;
 }
 
 .red {
@@ -279,17 +251,21 @@ footer {
 }
 
 .red::after {
-  content: "Campo inválido";
   position: fixed;
-  bottom: 100%;
   z-index: 100;
+  bottom: 100%;
+
+  content: "Campo inválido";
 }
 
 .error {
-  display: none;
-  color: red;
-  font-size: 12px;
   position: absolute;
+
+  display: none;
+
+  color: red;
+
+  font-size: 12px;
 }
 
 .red + .error {
@@ -297,14 +273,17 @@ footer {
 }
 
 .success-icon {
-    stroke-dasharray: 530;
     animation: 1.6s write cubic-bezier(.25,.8,.25,1);
+
+    stroke-dasharray: 530;
 }
 
 .done {
-  width: 160px;
   display: block;
+
+  width: 160px;
   margin: 40px auto;
+
   text-align: center;
 }
 

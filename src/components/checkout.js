@@ -32,7 +32,7 @@ const Checkout = ({handleCard, handleDate, handleName, handleCode, validateCard}
           <option value="11">11</option>
           <option value="12">12</option>
         </select>
-        <select className="checkout__select" name="Ano" onChange={handleDate} required>
+        <select className="checkout__select" name="Ano" onBlur={handleDate} required>
           <option value="">Ano</option>
           <option value="2016">16</option>
           <option value="2017">17</option>
