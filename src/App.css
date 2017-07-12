@@ -89,13 +89,12 @@
 
     line-height: 2.8;
   }
-  .header__description--active {
+  .header__description:first-child {
     position: relative;
 
-    color: var(--main-color);
-    background-color: white;
+    border-right: solid 1px white;
   }
-  .header__description--active:after {
+  .header__description:first-child:after {
     position: absolute;
     left: 100%;
 
@@ -106,6 +105,13 @@
 
     border-width: 25px 0 25px 14px;
     border-style: solid;
+    border-color: transparent transparent transparent #ddd;
+  }
+  .header__description.active {
+    color: var(--main-color);
+    background-color: white;
+  }
+  .header__description.active:after {
     border-color: transparent transparent transparent #ffffff;
   }
 }
@@ -479,6 +485,12 @@
   width: 100%;
 
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .done {
+    margin-top: -100px;
+  }
 }
 
 .done__svg {
