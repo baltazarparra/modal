@@ -7,15 +7,15 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
+      actualPlan: '',
       descriptionTotal: '',
-      price: {},
-      payments: [],
-      planButton: [],
       isDisabled: false,
       isFetching: false,
       nextStep: 'Próximo passo: pagamento',
+      price: {},
+      payments: [],
+      planButton: [],
       pageActive: 'home',
-      actualPlan: '',
       validateCard: false,
       validateDate: false,
       validateName: false,
@@ -29,7 +29,6 @@ class App extends Component {
       .then(response => {
         const initialPlans = response
         const initialPlan = initialPlans.plans[0]
-
         this.setState({
           descriptionTotal: initialPlan.total,
           price: {
@@ -47,9 +46,11 @@ class App extends Component {
                   planName: item.name,
                   discount: item.discount
                 }
-              })
+              }
+            )
         })
-      })
+      }
+    )
   }
 
   handleClick (e) {
@@ -184,8 +185,8 @@ class App extends Component {
           handleSteps={(e) => this.handleSteps(e)}
           handleBack={(e) => this.handleBack(e)}
           handleCard={(e) => this.handleCard(e)}
-          handleDate={(e) => this.handleDate(e)}
           handleName={(e) => this.handleName(e)}
+          handleDate={(e) => this.handleDate(e)}
           handleCode={(e) => this.handleCode(e)}
           handleDone={(e) => this.handleDone(e)}
         />

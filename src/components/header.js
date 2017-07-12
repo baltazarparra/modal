@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Header = ({pageActive, handleBack}) => (
   <header className="header">
@@ -17,5 +18,10 @@ const Header = ({pageActive, handleBack}) => (
     </div>}
   </header>
 )
+
+Header.propTypes = {
+    handleBack: PropTypes.func.isRequired,
+    pageActive: PropTypes.string.isRequired
+}
 
 export default Header

@@ -24,7 +24,8 @@ const Price = ({ descriptionTotal, price, payments }) => (
 
 Price.propTypes = {
     descriptionTotal: PropTypes.string.isRequired,
-    price: PropTypes.object.isRequired
+    price: PropTypes.object.isRequired,
+    payments: PropTypes.array.isRequired
 }
 
 export default Price

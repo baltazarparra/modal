@@ -25,6 +25,9 @@ Progressive Web App 82
 Accessibility 97
 Best Practices 92
 
+Acessando a página pelo Android algumas vezes, o google já libera o banner para adicionar a homescreen,
+caso queiram simular, é só acessar o menu do navegador Android, e clicar em Adicionar a tela inicial.
+
 Fiz alguns testes bem simples apenas pra validar renderização de componentes,
 comecei a estudar testes unitários com Jest e Enzyne para implementar neste teste.
 

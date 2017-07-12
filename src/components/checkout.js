@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Checkout = ({handleCard, handleDate, handleName, handleCode, validateCard, actualPlan}) => (
-  <form id="checkout" className="checkout">
+  <form id="checkout" className="checkout" autoComplete="off">
       <label className="checkout__label">
         Número do Cartão
         <input
@@ -58,5 +59,14 @@ const Checkout = ({handleCard, handleDate, handleName, handleCode, validateCard,
       </span>
     </form>
 )
+
+Checkout.propTypes = {
+    handleCard: PropTypes.func.isRequired,
+    handleDate: PropTypes.func.isRequired,
+    handleName: PropTypes.func.isRequired,
+    handleCode: PropTypes.func.isRequired,
+    validateCard: PropTypes.bool.isRequired
+}
+
 
 export default Checkout
