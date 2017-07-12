@@ -12,6 +12,7 @@ class App extends Component {
       payments: [],
       planButton: [],
       isDisabled: false,
+      isFetching: false,
       nextStep: 'Próximo passo: pagamento',
       pageActive: 'home',
       actualPlan: '',
@@ -53,6 +54,7 @@ class App extends Component {
 
   handleClick (e) {
     const targetId = e.target.id
+    this.setState({isFetching: true})
     const data = fetch('./data.json')
     data
       .then(data => data.json())
@@ -70,8 +72,14 @@ class App extends Component {
           actualPlan: selected.id,
           descriptionTotal: selected.total
         })
+        const finish = false
+        return finish
       }
-    )
+    ).then((finish) => {
+      this.setState({isFetching: false})
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   handleSteps (e) {

@@ -13,6 +13,7 @@ const Modal = ({
   payments,
   planButton,
   isDisabled,
+  isFetching,
   handleClick,
   pageActive,
   actualPlan,
@@ -41,6 +42,7 @@ const Modal = ({
           planButton={planButton}
           handleClick={handleClick}
           actualPlan={actualPlan}
+          isFetching={isFetching}
         />}
         {pageActive === 'checkout' &&
           <Checkout

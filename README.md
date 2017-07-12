@@ -18,12 +18,6 @@ visto que não havia uma especificação rígida quanto a suporte a navegadores.
 Todas propriedades usadas já oferecem um bom suporte nos navegadores atuais,
 mas ainda não estão totalmente implementadas em navegadores antigos.
 
-Inicialmente estava alimentando a app com a nova api fetch() do javascript,
-só que ela ainda não oferecer um método abort como o Ajax,
-então optei por refatorar está parte, visto que,
-sem o abort, cliques sequências nos botões de planos poderiam ter efeitos indesejados,
-inclusive afetar a performance.
-
 Implementei alguns conceitos das Progressive Web Apps,
 conseguindo um resultado considerável no Lighthouse:
 
