@@ -11,7 +11,7 @@ class App extends Component {
       price: {},
       payments: [],
       planButton: [],
-      isDisabled: true,
+      isDisabled: false,
       nextStep: 'Próximo passo: pagamento',
       pageActive: 'home',
       actualPlan: '',
@@ -81,6 +81,14 @@ class App extends Component {
       pageActive: 'checkout'
     })
   }
+
+  handleBack (e) {
+    this.setState({
+      isDisabled: false,
+      nextStep: 'Próximo passo: pagamento',
+      pageActive: 'home'
+    })
+ }
 
   handleCard (e) {
     const card = new CreditCard()

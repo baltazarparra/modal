@@ -18,6 +18,7 @@ const Modal = ({
   actualPlan,
   nextStep,
   handleSteps,
+  handleBack,
   handleCard,
   handleDate,
   handleName,
@@ -29,7 +30,7 @@ const Modal = ({
   validateCode
 }) => (
   <section className="modal">
-    <Header pageActive={pageActive} />
+    <Header pageActive={pageActive} handleBack={handleBack}/>
       <main className="main">
         {pageActive === 'home' && <Price
           descriptionTotal={descriptionTotal}
