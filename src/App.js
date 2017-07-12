@@ -9,11 +9,12 @@ class App extends Component {
     this.state = {
       descriptionTotal: '',
       price: {},
+      payments: [],
       planButton: [],
       isDisabled: true,
       nextStep: 'Próximo passo: pagamento',
-      isCurrent: 'active',
       pageActive: 'home',
+      actualPlan: '',
       validateCard: false,
       validateDate: false,
       validateName: false,
@@ -36,6 +37,8 @@ class App extends Component {
             decimal: initialPlan.price.decimal,
             periodicy: initialPlan.price.periodicy
           },
+          payments: initialPlan.payments,
+          actualPlan: initialPlan.id,
           planButton:
             initialPlans.plans.map((item) => {
                 return {
@@ -57,13 +60,14 @@ class App extends Component {
         const selected = data.plans.find((item) => item.id.toString() === targetId)
         this.setState({
           isDisabled: false,
-          isCurrent: '',
           price: {
             currency: selected.price.currency,
             integer: selected.price.integer,
             decimal: selected.price.decimal,
             periodicy: selected.price.periodicy
           },
+          payments: selected.payments,
+          actualPlan: selected.id,
           descriptionTotal: selected.total
         })
       }
@@ -78,23 +82,15 @@ class App extends Component {
     })
   }
 
-  handleBack (e) {
-    this.setState({
-      isDisabled: true,
-      nextStep: 'Próximo passo: pagamento',
-      pageActive: 'home'
-    })
-  }
-
   handleCard (e) {
     const card = new CreditCard()
     if(card.isValid(e.target.value)) {
-      e.target.classList.remove('red')
+      e.target.classList.remove('invalid')
       this.setState({
         validateCard: true
       })
     } else {
-      e.target.classList.add('red')
+      e.target.classList.add('invalid')
       this.setState({
         validateCard: false
       })
@@ -107,20 +103,20 @@ class App extends Component {
     const month = today.getMonth() + 1
     const validMonth = document.querySelector('[name="Mês"]')
     if(e.target.value > year) {
-      e.target.classList.remove('red')
-      validMonth.classList.remove('red')
+      e.target.classList.remove('invalid')
+      validMonth.classList.remove('invalid')
       this.setState({
         validateDate: true
       })
     } else if ((parseInt(validMonth.value, 10) >= month) && (parseInt(e.target.value, 10) === year)) {
-      e.target.classList.remove('red')
-      validMonth.classList.remove('red')
+      e.target.classList.remove('invalid')
+      validMonth.classList.remove('invalid')
       this.setState({
         validateDate: true
       })
     } else {
-      e.target.classList.add('red')
-      validMonth.classList.add('red')
+      e.target.classList.add('invalid')
+      validMonth.classList.add('invalid')
       this.setState({
         validateName: false
       })
@@ -129,12 +125,12 @@ class App extends Component {
 
   handleName (e) {
     if(e.target.value.length > 1) {
-      e.target.classList.remove('red')
+      e.target.classList.remove('invalid')
       this.setState({
         validateName: true
       })
     } else {
-      e.target.classList.add('red')
+      e.target.classList.add('invalid')
       this.setState({
         validateName: false
       })
@@ -143,12 +139,12 @@ class App extends Component {
 
   handleCode (e) {
     if(e.target.value.length >= 3 && e.target.value.length <= 4) {
-      e.target.classList.remove('red')
+      e.target.classList.remove('invalid')
       this.setState({
         validateCode: true
       })
     } else {
-      e.target.classList.add('red')
+      e.target.classList.add('invalid')
       this.setState({
         validateCode: false
       })

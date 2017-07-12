@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Price = ({ descriptionTotal, price }) => (
+const Price = ({ descriptionTotal, price, payments }) => (
   <article className="price">
     <div className="price__tag">
       <div className="price__coin">{price.currency}</div>
@@ -15,9 +15,9 @@ const Price = ({ descriptionTotal, price }) => (
       {descriptionTotal}
     </p>
     <ul className="price__list">
-      <li className="price__list-item price__list-item--cartao">Até 3x iguais no cartão de crédito</li>
-      <li className="price__list-item price__list-item--debito">Parcela única no débito em conta</li>
-      <li className="price__list-item price__list-item--boleto">Parcela única no boleto bancário</li>
+      <li className="price__list-item price__list-item--cartao">{payments[0]}</li>
+      <li className="price__list-item price__list-item--debito">{payments[1]}</li>
+      <li className="price__list-item price__list-item--boleto">{payments[2]}</li>
     </ul>
   </article>
 )

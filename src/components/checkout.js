@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Checkout = ({handleCard, handleDate, handleName, handleCode, validateCard}) => (
+const Checkout = ({handleCard, handleDate, handleName, handleCode, validateCard, actualPlan}) => (
   <form id="checkout" className="checkout">
       <label className="checkout__label">
         Número do Cartão
         <input
-          className="checkout__input checkout__input--card card"
+          className="checkout__input checkout__input--card"
           placeholder="Número do cartão"
           type="number"
           minLength="13"
@@ -45,7 +45,7 @@ const Checkout = ({handleCard, handleDate, handleName, handleCode, validateCard}
       </label>
       <label className="checkout__label">
         Nome do Titular
-        <input className="checkout__input" placeholder="Nome do titular" type="text" onBlur={handleName} required />
+        <input className="checkout__input checkout__input--name" placeholder="Nome do titular" type="text" onBlur={handleName} required />
         <div className="error">Campo inválido</div>
       </label>
       <label className="checkout__label checkout__input--cvc">

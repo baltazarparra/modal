@@ -11,7 +11,7 @@ const Done = () => (
       </svg>
     </div>
     <h2 className="done__subtitle">
-      <strong className="done__strong">Parabens</strong>
+      <strong className="done__strong">Parabéns</strong>
       Você agora é um assinante Sexlog!
     </h2>
   </div>

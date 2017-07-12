@@ -10,14 +10,14 @@ import PropTypes from 'prop-types'
 const Modal = ({
   descriptionTotal,
   price,
+  payments,
   planButton,
   isDisabled,
   handleClick,
-  isCurrent,
   pageActive,
+  actualPlan,
   nextStep,
   handleSteps,
-  handleBack,
   handleCard,
   handleDate,
   handleName,
@@ -29,16 +29,17 @@ const Modal = ({
   validateCode
 }) => (
   <section className="modal">
-    <Header pageActive={pageActive} handleBack={handleBack} />
+    <Header pageActive={pageActive} />
       <main className="main">
         {pageActive === 'home' && <Price
           descriptionTotal={descriptionTotal}
           price={price}
+          payments={payments}
         />}
         {pageActive === 'home' && <Plans
           planButton={planButton}
           handleClick={handleClick}
-          isCurrent={isCurrent}
+          actualPlan={actualPlan}
         />}
         {pageActive === 'checkout' &&
           <Checkout
@@ -47,6 +48,7 @@ const Modal = ({
             handleName={handleName}
             handleCode={handleCode}
             validateCard={validateCard}
+            actualPlan={actualPlan}
           />}
         {pageActive === 'done' && <Done handleDone={handleDone}/>}
       </main>
@@ -70,7 +72,6 @@ Modal.propTypes = {
     planButton: PropTypes.array.isRequired,
     isDisabled: PropTypes.bool.isRequired,
     handleClick: PropTypes.func.isRequired,
-    isCurrent: PropTypes.string.isRequired,
     pageActive: PropTypes.string.isRequired,
     nextStep: PropTypes.string.isRequired,
     handleSteps: PropTypes.func.isRequired,
